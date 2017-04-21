@@ -219,7 +219,7 @@ void decodificar (char* destino, char* txtOriginal) {
 	}
 	
 	for(int i=4; i < strlen(txtOriginal); i++){
-		txtDecodificado[contador] = (int)txtOriginal[i] - chave;
+		txtDecodificado[contador] = (int)txtOriginal[i] + chave;
 		contador++;
 	}
 	

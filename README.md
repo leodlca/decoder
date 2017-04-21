@@ -1,4 +1,4 @@
-## [de]coder
+## Sobre o projeto
 
 Este é um projeto realizado como TP para a p2 do 1º semestre de engenharia da computação da Unisanta. Sua função é codificar e decodificar frases, palavras, arquivos de texto, entre outros. O projeto se utiliza de um sistema simples de geração de chaves randômicas de criptografia que ficam armazenadas nas próprias strings geradas que se comporta dentro dos conformes da tabela ASCII. Seu código fonte foi inteiramente escrito em C, com alguns elementos de C++, pois o projeto pede para que ela seja compilada em C++.
 
@@ -21,8 +21,8 @@ Este é um projeto realizado como TP para a p2 do 1º semestre de engenharia da 
 
 Você pode:
 
-1 - Baixar o programa na aba release desse projeto e abrir o arquivo .exe contido no arquivo compresso.
-2 - Baixar/clonar o repositório e compilar e/ou modificar o código-fonte como desejar no seu IDE/compilador favorito.
+1. Baixar o programa na aba release desse projeto e abrir o arquivo .exe contido no arquivo compresso.
+2. Baixar/clonar o repositório e compilar e/ou modificar o código-fonte como desejar no seu IDE/compilador favorito.
 
 ----------------------------------
 ### Changelog

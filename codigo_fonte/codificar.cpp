@@ -239,7 +239,7 @@ void codificar (char* destino, char* txtOriginal) {
 	/* Codificação real da string de acordo com a chave */
 	
 	for(int i = 4; i < strlen(txtOriginal)+4; i++) {
-		txtCodificado[i] = (int)txtOriginal[contador] + chave;
+		txtCodificado[i] = (int)txtOriginal[contador] - chave;
 		contador++;
 	}
 	
