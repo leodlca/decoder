@@ -231,14 +231,14 @@ void codificar (char* destino, char* txtOriginal) {
 	const char* atual;
 	const char* atual_1;
 			
-	int chave = gerarChave(29); // Gera chave de 1 a 29.
+	int chave = gerarChave(19); // Gera chave de 1 a 29.
 	int contador = 0;
 	
 	/* Chave de codificação gravada na string */
 	
-	txtCodificado[0] = 32 + gerarChave(126);
+	txtCodificado[0] = 32 + gerarChave(93);
 	txtCodificado[1] = (codificarChave(chave) / 10 + '0') + 10;
-	txtCodificado[2] = 32 + gerarChave(126);
+	txtCodificado[2] = 32 + gerarChave(93);
 	txtCodificado[3] = (codificarChave(chave) % 10 + '0') + 10;
 	
 	/* Codificação real da string de acordo com a chave */
