@@ -9,8 +9,6 @@
 #include <conio.h>
 #include <time.h>
 
-extern int chaveAtual;
-
 /* Cabeçalho do arquivo */
 
 void codificarArquivo();
@@ -225,29 +223,45 @@ int codificarChave (int chaveOriginal) {
 /* e a armazena na string destino.           */
 
 void codificar (char* destino, char* txtOriginal) {
-	char txtCodificado[10000] = ""; 	
-	int chave = gerarChave(29); // Gera chave de 1 a 29.
+	char txtCodificado[10000] = "",
+		txtTabela[10000] = "";
+		
+	const char* atual;
+	const char* atual_1;
+			
+	int chave = gerarChave(19); // Gera chave de 1 a 19.
 	int contador = 0;
 	
 	/* Chave de codificação gravada na string */
 	
-	txtCodificado[0] = 32 + gerarChave(126);
+	txtCodificado[0] = 32 + gerarChave(93);
 	txtCodificado[1] = (codificarChave(chave) / 10 + '0') + 10;
-	txtCodificado[2] = 32 + gerarChave(126);
+	txtCodificado[2] = 32 + gerarChave(93);
 	txtCodificado[3] = (codificarChave(chave) % 10 + '0') + 10;
 	
 	/* Codificação real da string de acordo com a chave */
 	
 	for(int i = 4; i < strlen(txtOriginal)+4; i++) {
 		txtCodificado[i] = (int)txtOriginal[contador] - chave;
+		
+		atual = &txtOriginal[contador];
+		
+		strncat(txtTabela, atual, 1);
+		strcat(txtTabela, "\t");
+		
+		atual_1 = &txtCodificado[i];
+		
+		strncat(txtTabela, atual_1, 1);
+		strcat(txtTabela, "\n");
+		
 		contador++;
 	}
 	
 	/* Armazena txtCodificado na string destino. */
 	
+	salvarArquivo("tabela.txt", "w", txtTabela, "", "");
 	strcpy(destino, txtCodificado);
 }
-
 
 
 

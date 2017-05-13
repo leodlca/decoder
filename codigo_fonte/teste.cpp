@@ -20,7 +20,7 @@ void teste() {
 	dataAtual(data);
 	
 	if(!temArquivo("teste.txt")) {
-		salvarArquivo("teste.txt", "w", "The quick brown jumps over the lazy dog", "", "");
+		salvarArquivo("teste.txt", "w", "The quick brown fox jumps over the lazy dog", "", "");
 	}
 
 	/* Exibição do Menu Teste */
@@ -29,7 +29,7 @@ void teste() {
 	printf("Bem-Vindo ao Menu Teste.\n\n");
 	printf("Este menu tem como funcao provar o bom funcionamento do \n");
 	printf("projeto, para isso, os seguintes passos serao realizados: \n\n");
-	printf("1 - A frase 'The quick brown jumps over the lazy dog' sera \n");
+	printf("1 - A frase 'The quick brown fox jumps over the lazy dog' sera \n");
 	printf("codificada, exibida no console, e armazenada no arquivo \n");
 	printf("txt_codificado.txt.\n\n");
 	printf("2 - A mesma frase sera decodificada, exibida no console  \n");
