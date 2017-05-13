@@ -1,4 +1,4 @@
-/*  Esse arquivo contém as funções acionadas quando o usuário solicita a opção 1 - */
+/*  Esse arquivo contÃ©m as funÃ§Ãµes acionadas quando o usuÃ¡rio solicita a opÃ§Ã£o 1 - */
 /*  Codificar no Menu Principal                                                    */
 
 #include "header.h"
@@ -15,8 +15,7 @@ void codificarArquivo();
 void codificarInput();
 void codificar(char*, char*);
 
-/* codificarMenu() é responsável por redirecionar o usuário para uma das 2 funções    */
-/* desejadas da opção Codificar.                                                      */
+/* codificarMenu() redireciona o usuario para uma das 2 opcoes desejadas.  */                                                  */
 
 void codificarMenu() {
 	char escolhaStr[50];
@@ -28,8 +27,8 @@ void codificarMenu() {
 	printf("2 - Codificar texto do usuario\n\n");
 	printf("*********************************************************\n");
 
-	/* O Menu será exibido ao menos uma vez, e entrará em loop */
-	/* até que uma opção válida seja selecionada.              */
+	/* O Menu sera exibido ao menos uma vez, e continuara ate */
+	/* uma opcao valida ser selecionada.                      */
 
 	do {
 
@@ -61,8 +60,7 @@ void codificarMenu() {
 	} while (repetir);
 }
 
-/*	codificarArquivo() lerá a string contida em txt_decodificado e a traduzirá por meio */
-/*	da função codificar().                                                              */
+/*	codificarArquivo() lera a string contida em txt_decodificar e a codificara  */
 
 void codificarArquivo() {
 
@@ -70,14 +68,14 @@ void codificarArquivo() {
 		txtCodificado[10000],
 		data[80];
 		
-	/* Gera uma string com a data atual, lê arquivo e */
+	/* Gera uma string com a data atual, le arquivo e */
 	/* decodifica a string nele contida.              */
 
 	dataAtual(data);
 	lerArquivo(txtOriginal, "txt_decodificado.txt");
 	codificar(txtCodificado, txtOriginal);
 
-	/* Caso o arquivo esteja vazio, lançar erro. */
+	/* Caso o arquivo esteja vazio, lancar erro. */
 
 	if (!temTexto("txt_decodificado.txt")) {
 		strcpy(txtCodificado, "\nERRO: O Arquivo txt_decodificado nao contem texto.\n");
@@ -87,20 +85,20 @@ void codificarArquivo() {
 
 	printf("Traduzido e arquivado em txt_decodificado.txt as %s\n\n%s\n\n", data, txtCodificado);
 
-	/* Armazena o conteúdo decodificado formatado nos arquivos de registro */
+	/* Armazena o conteudo decodificado formatado nos arquivos de registro */
 
-	salvarArquivo("user_log.txt", "a", txtCodificado, "CODIFICAÇÃO", data);
+	salvarArquivo("user_log.txt", "a", txtCodificado, "CODIFICAÃ‡ÃƒO", data);
 	salvarArquivo("txt_codificado.txt", "w", txtCodificado, "", "");
 
-	/* Espera alguma entrada do usuário para voltar ao menu principal. */
+	/* Espera alguma entrada do usuario para voltar ao menu principal. */
 
 	printf("Pressione qualquer tecla para voltar ao menu... ");
 	getch();
 
 }
 
-/* 	codificarInput() lerá uma string inserida pelo usuário e a traduzirá por meio */
-/*	da função codificar().                                                        */
+/* 	codificarInput() lera uma string inserida pelo usuario e a traduzira¡ por meio */
+/*	da funcao codificar().                                                        */
 
 void codificarInput() {
 
@@ -108,35 +106,35 @@ void codificarInput() {
 		 txtCodificado[10000],
 		 data[80];
 	
-	/* Pede ao usuário o texto a ser codificado. */
+	/* Pede ao usuario o texto a ser codificado. */
 
 	system("cls");
 	printf("Insira o texto a ser codificado: ");
-	fgets(txtOriginal, 9999, stdin); // fgets() é uma solução mais segura à gets().
+	fgets(txtOriginal, 9999, stdin); // fgets() Ã© uma soluÃ§Ã£o mais segura Ã  gets().
 
-	/* Codifica o texto entrado pelo usuário. */
+	/* Codifica o texto entrado pelo usuario. */
 
 	dataAtual(data);
 	codificar(txtCodificado, txtOriginal);
 
-	/* Exibe o conteúdo traduzido com a data. */
+	/* Exibe o conteudo traduzido com a data. */
 
 	printf("\nTraduzido e arquivado em txt_codificado.txt as %s\n\n%s\n\n", data, txtCodificado);
 
-	/* Salvar Conteúdo. */
+	/* Salvar Conteudo. */
 
-	salvarArquivo("user_log.txt", "a", txtCodificado, "CODIFICAÇÃO", data);
+	salvarArquivo("user_log.txt", "a", txtCodificado, "CODIFICAÃ‡ÃƒO", data);
 	salvarArquivo("txt_codificado.txt", "w", txtCodificado, "", "");
 	
-	/* Espera entrada do usuário para voltar ao menu. */
+	/* Espera entrada do usuario para voltar ao menu. */
 
 	printf("\nPressione qualquer tecla para voltar ao menu... ");
 	getch();
 
 }                             
 
-/* gerarChave() gera um número aleatório */
-/* que vai de 1 até o argumento limite.  */                   
+/* gerarChave() gera um numero aleatorio */
+/* que vai de 1 ate o argumento limite.  */                   
 
 int gerarChave (int limite) {
 	srand((unsigned)time(NULL));
@@ -157,14 +155,14 @@ int codificarChave (int chaveOriginal) {
 	int numeros[2] = {(chaveOriginal/10)*10, chaveOriginal % 10};
 	
 	/* Caso o valor seja menor que 10, a chave inicia com 80, */
-	/* pois se x < 10, 10/10*10 = 0, para evitar confusão de  */
+	/* pois se x < 10, 10/10*10 = 0, para evitar confusao de  */
 	/* casas decimais, atribui-se 80.                         */
 	
 	if (chaveOriginal < 10) {
 		chave += 80;
 	} 
 	
-	/* Tabela switch de codificação de chave */
+	/* Tabela switch de codificaÃ§Ã£o de chave */
 	
 	for(int i=0; i<2; i++) {
 		switch(numeros[i]) {
@@ -212,7 +210,7 @@ int codificarChave (int chaveOriginal) {
 				break;	
 			default:
 				break;
-				// não faça nada.	
+				// nÃ£o faÃ§a nada.	
 		}
 	}
 	
@@ -232,14 +230,14 @@ void codificar (char* destino, char* txtOriginal) {
 	int chave = gerarChave(19); // Gera chave de 1 a 19.
 	int contador = 0;
 	
-	/* Chave de codificação gravada na string */
+	/* Chave de codificacao gravada na string */
 	
 	txtCodificado[0] = 32 + gerarChave(93);
 	txtCodificado[1] = (codificarChave(chave) / 10 + '0') + 10;
 	txtCodificado[2] = 32 + gerarChave(93);
 	txtCodificado[3] = (codificarChave(chave) % 10 + '0') + 10;
 	
-	/* Codificação real da string de acordo com a chave */
+	/* Codificacao real da string de acordo com a chave */
 	
 	for(int i = 4; i < strlen(txtOriginal)+4; i++) {
 		txtCodificado[i] = (int)txtOriginal[contador] - chave;
@@ -262,6 +260,3 @@ void codificar (char* destino, char* txtOriginal) {
 	salvarArquivo("tabela.txt", "w", txtTabela, "", "");
 	strcpy(destino, txtCodificado);
 }
-
-
-
